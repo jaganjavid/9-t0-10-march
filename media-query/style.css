@@ -1,0 +1,54 @@
+
+
+
+
+.boxes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boxes>div{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+
+
+
+@media only screen and (min-width: 1000px) {
+    .boxes>div:nth-child(1){
+        background-color: green;
+    }
+}
+
+
+@media only screen and (min-width: 1100px) {
+    .boxes>div:nth-child(2){
+        background-color: red;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .boxes>div:nth-child(3){
+        background-color: orangered;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .boxes>div:nth-child(1){
+        background-color: green;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .boxes>div:nth-child(2){
+        background-color: red;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .boxes>div:nth-child(3){
+        background-color: orangered;
+    }
+}

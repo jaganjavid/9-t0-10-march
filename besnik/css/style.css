@@ -1,0 +1,185 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1125px;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+.my-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #231A36;
+    color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 50px;
+}
+
+/* All section padding */
+.clients,
+.solution{
+    padding: 100px 0px;
+}
+
+
+
+header {
+    padding: 15px 0px;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-wrapper nav {
+    display: flex;
+    gap: 50px;
+}
+
+.header-wrapper nav a {
+    color: #ffffff;
+}
+
+
+main {
+    background: url("../img/banner/bg.svg") no-repeat center;
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    background-size: cover;
+}
+
+/* Banner Start */
+.banner {
+    padding: 100px 0px;
+}
+
+.banner-wrapper {
+    text-align: center;
+    color: #ffffff;
+}
+
+.banner-wrapper p {
+    width: 40%;
+    line-height: 30px;
+    margin: 20px auto 60px auto;
+    /* margin: 20px 0px 60px 0px; */
+}
+
+/* Banner End */
+
+/* Clients Start */
+
+
+
+/* Clients End */
+
+/* Solution Start */
+
+.solution .container{
+    max-width: 770px;
+}
+
+.clients-2{
+    padding: 100px 0px;
+}
+/* Solution End */
+
+/* Search Start*/
+.search{
+    padding: 100px 0px;
+    background-color: #231A36;
+    color: #ffffff;
+}
+/* Search End*/
+
+/* H-client Start*/
+.h-clients{
+    padding: 100px 0px;
+}
+
+.h-clients>div>div:first-child{
+    position: relative;
+}
+
+.h-clients>div>div:first-child>img{
+    position: absolute;
+    top: -30px;
+    left: 0px;
+}
+
+.h-clients>div>div>h2{
+     position: relative; 
+    /* display: inline-block; */
+    display: inline-flex;
+    /* margin-bottom: 50px; */
+}
+
+.h-clients>div>div>h2 img{
+   position: absolute;
+   top: -35px;
+   right: -60px;
+}
+/* H-client End*/
+
+
+/* .h-wrapper{
+   display: flex;
+}
+
+.h-wrapper>div{
+    width: 33.3%;
+    min-height: 300px;
+    overflow: hidden;
+} */
+
+
+
+@media only screen and (min-width: 992px) {
+
+    .text-block {
+        display: block;
+    }
+
+    .banner-wrapper h1 {
+        font-size: 94px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .solution-wrapper>div:nth-child(2)>div:first-child{
+        order: 2;
+    }
+    .solution-wrapper>div:nth-child(2)>div:first-child{
+        order: 1;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .header-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

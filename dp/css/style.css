@@ -1,0 +1,100 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.full-container{
+    max-width: 1400px;
+    margin: 0px auto;
+}
+
+.container{
+    max-width: 1200px;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+}
+
+
+/* All section padding */
+.banner,.lightning,.lightweight,.simple{
+    padding: 100px 0px;
+}
+
+.banner{
+    background-color: #EBE5FA;
+}
+
+.lightning-wrapper{
+    padding: 50px 0px;
+}
+
+.lightning-wrapper>div:last-child>div>div{
+    background-color: blue;
+    padding: 50px;
+    color: #ffffff;
+    border-radius: 20px;
+    /* min-height: 385px; */
+}
+
+.lightning-wrapper>div:last-child>div>div p{
+    height: 120px;
+}
+
+/* lightweight start */
+.lightweight>div>div:first-child>div:first-child>div{
+    padding: 40px;
+    background-color: #FFF7ED;
+    border-radius: 12px;
+}
+
+.lightweight>div>div:first-child>div:last-child>div{
+    background-color: #E0F7FA;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.lightweight>div>div:last-child{
+    background-color: #ECECFE;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+
+/* lightweight end */
+
+/* simple Start */
+.simple{
+    background: url("../img/simple/bg.png") no-repeat center;
+    background-size: cover;
+}
+.simple ul{
+    display: inline-block;
+}
+
+.simple ul li {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+
+.simple>div>div:last-child>div:first-child{
+    background-color: #ffffff;
+    padding: 20px;
+}
+.simple>div>div:last-child>div:last-child{
+    background-color: #651FFF;
+    padding: 20px;
+}
+
+
+
+
+/* simple End */

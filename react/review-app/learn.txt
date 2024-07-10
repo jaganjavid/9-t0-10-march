@@ -1,0 +1,67 @@
+import React from 'react'
+
+const App = () => {
+
+  const title = "My Blog";
+  const body = "This is my first Blog";
+  const comments = [
+    {id:1, text:"Command One"},
+    {id:2, text:"Command Two"},
+    {id:3, text:"Command Three"}
+  ];
+
+  const loading = false;
+  
+  const showComment = true;
+
+  const blockElement = (
+    <div className='comment'>
+    <h3>Commets ({comments.length})</h3>
+  
+    <ul>
+      {
+        comments.map((comment, index) => (
+          <li key={index}>{comment.text}</li>
+        ))
+      }
+    </ul>
+  </div>
+  )
+
+  if(loading) return (<h1>Hello world</h1>);
+  
+  return (
+    <div className='container'>
+      <h1>{title.toUpperCase()}</h1>
+      <p>{body}</p>
+      
+      {showComment ? "Yes" : "No"}
+      {/* <p>{Math.floor(Math.random() * 10)}</p> */}
+
+      {showComment && blockElement}
+    </div>
+  )
+}
+
+export default App
+
+
+
+
+
+
+
+// {showComment ? (
+//   <div className='comment'>
+//   <h3>Commets ({comments.length})</h3>
+
+//   <ul>
+//     {
+//       comments.map((comment, index) => (
+//         <li key={index}>{comment.text}</li>
+//       ))
+//     }
+//   </ul>
+// </div>
+// ): null}
+

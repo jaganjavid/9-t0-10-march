@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div id="main" class="card">
+                    <div class="card-content">
+                        <span class="card-title">Task List</span>
+                        <div class="row">
+                            <form id="task-form">
+                                <div class="input-field col s12">
+                                    <input type="text" name="task" id="task">
+                                    <label for="task">New Task</label>
+                                </div>
+                                <input type="submit" value="Add Task" class="btn purple">
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="card-action">
+                        <div class="input-field col s12">
+                            <input type="text" name="task" id="task">
+                            <label for="task">Search</label>
+                        </div>
+                        <h5 class="test" id="task-title">
+                            Tasks
+                        </h5>
+                        <ul class="collection">
+                          
+                        </ul>
+                        <a class="clear-task btn black" id="btn-test" href="#">Clear Tasks</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <p id="color-id" class="color-change">Hello</p> -->
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        
+    <script src="./9-keyboard-event.js"></script>
+    <script src="./app.js"></script>
+    <!-- <script src="./ls.js"></script>
+    <script src="./json.js"></script> -->
+    <!-- <script src="./test.js"></script> -->
+    
+</body>
+
+</html>
