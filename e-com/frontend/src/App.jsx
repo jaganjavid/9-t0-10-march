@@ -1,5 +1,7 @@
+import { Outlet } from "react-router-dom";
 import Header from "./component/Header"
-import Homescreen from "./pages/Homescreen"
+// import Homescreen from "./pages/Homescreen";
+
 
 
 
@@ -11,7 +13,7 @@ function App() {
       <Header/>
 
       <div className="container mx-auto">
-        <Homescreen/>
+        <Outlet/>
       </div>
     </>
   )

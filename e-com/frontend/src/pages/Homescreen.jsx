@@ -1,3 +1,6 @@
+
+
+
 import Product from "../component/Product"
 import products from "../products"
 

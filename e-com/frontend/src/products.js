@@ -9,8 +9,8 @@ const products = [
     category: 'Furniture',
     price: 899.99,
     countInStock: 15,
-    rating: 4.8,
-    numReviews: 10,
+    rating: 1,
+    numReviews: 1,
   },
   {
     _id: '2',
@@ -22,7 +22,7 @@ const products = [
     category: 'Furniture',
     price: 549.99,
     countInStock: 8,
-    rating: 4.5,
+    rating: 1.5,
     numReviews: 6,
   },
   {
@@ -35,7 +35,7 @@ const products = [
     category: 'Furniture',
     price: 349.99,
     countInStock: 12,
-    rating: 4.2,
+    rating: 2.5,
     numReviews: 8,
   },
   {
@@ -48,7 +48,7 @@ const products = [
     category: 'Furniture',
     price: 199.99,
     countInStock: 20,
-    rating: 4.6,
+    rating: 3,
     numReviews: 15,
   },
   {
@@ -61,7 +61,7 @@ const products = [
     category: 'Furniture',
     price: 299.99,
     countInStock: 6,
-    rating: 4.0,
+    rating: 3.5,
     numReviews: 4,
   },
   {
