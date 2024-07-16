@@ -1,3 +1,5 @@
+
+
 const products = [
   {
     _id: '1',
@@ -47,7 +49,7 @@ const products = [
     brand: 'Modern Living',
     category: 'Furniture',
     price: 199.99,
-    countInStock: 20,
+    countInStock: 0,
     rating: 3,
     numReviews: 15,
   },

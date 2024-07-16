@@ -10,7 +10,8 @@ const Product = ({ product }) => {
         <figure>
           <img
             src={`${product.image}`}
-            alt="Shoes" />
+            alt="Shoes" 
+            className="h-[500px]"/>
         </figure>
         <div className="card-body">
           <h2 className="card-title">{product.name}</h2>
