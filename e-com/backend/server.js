@@ -1,9 +1,14 @@
 
 import express from "express";
+
 import products from "./data/products.js";
+import connectDB from "./config/db.js"
+
 import cors from "cors";
 
 const port = 5000;
+
+connectDB(); // Connect to mongo DB
 
 const app = express();
 
