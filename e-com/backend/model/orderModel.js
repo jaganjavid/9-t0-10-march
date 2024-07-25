@@ -15,7 +15,7 @@ const orderSchema = new mongoose.Schema({
             image: {type: String, required:true},
             price: {type: Number, required:true},
             product: {
-                type: mongoose.Schema.type.ObjectId,
+                type: mongoose.Schema.Types.ObjectId,
                 required:true,
                 ref:"Product"
             }, 
@@ -58,8 +58,27 @@ const orderSchema = new mongoose.Schema({
         default:0.0
     },
     isPaid:{
-        
+        type:Boolean,
+        required:true,
+        default:false
+    },
+    padiAt:{
+        type:Date
+    },
+    Isdelivered:{
+        type:Boolean,
+        required:true,
+        default:false
+    },
+    deliveredAt:{
+        type:Date
     }
 
 
+}, {
+    timestamps:true
 })
+
+const Order = mongoose.model("Order", orderSchema);
+
+export default Order;

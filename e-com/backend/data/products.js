@@ -2,7 +2,6 @@
 
 const products = [
     {
-      _id: '1',
       name: 'Modern Leather Sofa',
       image: '/images/sofa.jpeg',
       description:
@@ -15,7 +14,6 @@ const products = [
       numReviews: 1,
     },
     {
-      _id: '2',
       name: 'Wooden Dining Table Set',
       image: '/images/wooden-dining.jpeg',
       description:
@@ -28,7 +26,6 @@ const products = [
       numReviews: 6,
     },
     {
-      _id: '3',
       name: 'Vintage Bookshelf',
       image: '/images/vintage-bookshelf.jpeg',
       description:
@@ -41,7 +38,6 @@ const products = [
       numReviews: 8,
     },
     {
-      _id: '4',
       name: 'Contemporary Coffee Table',
       image: '/images/coffee-table.jpeg',
       description:
@@ -54,7 +50,6 @@ const products = [
       numReviews: 15,
     },
     {
-      _id: '5',
       name: 'Comfortable Recliner Chair',
       image: '/images/recliner-chair.jpeg',
       description:
@@ -67,7 +62,6 @@ const products = [
       numReviews: 4,
     },
     {
-      _id: '6',
       name: 'Rustic Bedroom Dresser',
       image: '/images/bedroom-dresser.jpeg',
       description:
