@@ -1,6 +1,4 @@
 
-import mongoose from "mongoose";
-import users from "./data/users.js";
 import products from "./data/products.js";
 
 import User from "./model/userModel.js";
@@ -18,8 +16,6 @@ const importData = async () => {
         await Order.deleteMany();
         await Product.deleteMany();
         await User.deleteMany();
-
-        const createUser = await User.insertMany(users);
 
         const sampleProduct = await Product.insertMany(products);
 

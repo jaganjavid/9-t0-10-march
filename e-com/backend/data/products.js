@@ -2,7 +2,6 @@
 
 const products = [
     {
-      _id:"1",
       name: 'Modern Leather Sofa',
       image: '/images/sofa.jpeg',
       description:
