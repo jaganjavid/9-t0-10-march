@@ -3,8 +3,6 @@ import Header from "./component/Header"
 // import Homescreen from "./pages/Homescreen";
 
 
-
-
 function App() {
  
 

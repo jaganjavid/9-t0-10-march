@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements} f
 import Homescreen from './pages/Homescreen.jsx';
 import ProductScreen from './pages/ProductScreen.jsx';
 
+import { Provider } from 'react-redux'
+import store from './store.js';
 
 
 
@@ -23,9 +25,9 @@ const router = createBrowserRouter(
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <Provider store={store}> 
     <RouterProvider router={router}>
-      <App />
+       <App />
     </RouterProvider>
-  </React.StrictMode>,
+  </Provider>
 )
