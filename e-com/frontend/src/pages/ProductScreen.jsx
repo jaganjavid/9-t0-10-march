@@ -1,36 +1,40 @@
 
 import {useState, useEffect} from "react"
 import { Link, useParams } from 'react-router-dom';
-import products from '../products';
-import axios from "axios";
+
 import Rating from '../component/Rating';
 
+import { useGetProductDetailQuery } from "../slices/productsApiSlices"
 
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../slices/cartSlice";
 
 
 const ProductScreen = () => {
 
-  const [product, setProduct] = useState({});
-
   const { id: productId } = useParams();
 
-  useEffect(() => {
-    const fetchProduct = async () => {
+  const [qty, setQty] = useState(1);
 
-      const { data } = await axios.get(`http://localhost:5000/api/products/${productId}`);
+  const dispatch = useDispatch();
 
-      setProduct(data);
+  const addToCartHandler = () => {
 
-    }
-
-    fetchProduct();
-
-  }, [productId]);
-
-  // const product = products.find((p) => p._id === productId);
+    dispatch(addToCart(qty));
 
 
+  }
+  
 
+  const { data:product, error, isLoading } = useGetProductDetailQuery(productId);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+
+  // console.log(product.countInstock);
+  // console.log([...Array(product.countInstock).keys()])
 
   return (
     <div>
@@ -54,10 +58,25 @@ const ProductScreen = () => {
               </div>
 
               <p>Price {product.price}</p>
-              <p>{product.countInStock > 0 ? "In stock" : "No stock"}</p>
+              <p>{product.countInstock > 0 ? "In stock" : "No stock"}</p>
+
+              {product.countInstock > 0 ? ( <div>
+                <h4>Qty</h4>
+
+                <form>
+                <select className="select select-bordered w-full max-w-xs" onChange={
+                  (e) => setQty(Number(e.target.value))
+                }>
+                 {[...Array(product.countInstock).keys()].map((item) => (
+                   <option key={item + 1}>{item + 1}</option>
+                 ))}
+                </select>
+                
+                </form>
+              </div>) : null}
 
               <div className="card-actions">
-                <button className="btn btn-primary">Add to cart</button>
+                <button onClick={addToCartHandler} disabled={product.countInstock === 0} className="btn btn-primary">Add to cart</button>
               </div>
             </div>
           </div>
