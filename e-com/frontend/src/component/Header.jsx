@@ -7,8 +7,6 @@ const Header = () => {
 
     const { cartItem } = useSelector((state) => state.cart);
 
-    console.log(cartItem);
-
     return (
         <div className="navbar bg-base-100">
             <div className="flex-1">

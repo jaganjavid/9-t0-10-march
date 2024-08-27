@@ -11,6 +11,8 @@ const cartSlice = createSlice({
 
         const item = action.payload;
 
+        console.log(item);
+
         const existItem = state.cartItem.find((a) => a._id === item._id);
   
         if (existItem) {
@@ -43,9 +45,12 @@ const cartSlice = createSlice({
   
         localStorage.setItem("cart", JSON.stringify(state));
       },
+      deleteCart:(state, action) => {
+        console.log(action.payload);
+      }
     },
   });
   
-  export const { addToCart } = cartSlice.actions;
+  export const { addToCart, deleteCart } = cartSlice.actions;
   
   export default cartSlice.reducer;

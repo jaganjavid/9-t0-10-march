@@ -1,8 +1,6 @@
 
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import { Link, useParams } from 'react-router-dom';
-
-
 
 import Rating from '../component/Rating';
 
@@ -19,6 +17,7 @@ const ProductScreen = () => {
   const dispatch = useDispatch();
 
   const { data: product, error, isLoading } = useGetProductDetailQuery(productId);
+
 
   const addToCartHandler = () => {
     dispatch(addToCart({ ...product, qty }));
