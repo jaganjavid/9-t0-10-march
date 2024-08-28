@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 
-import { addToCart,deleteCart } from "../slices/cartSlice";
+import { addToCart,removeFromCart } from "../slices/cartSlice";
 
 
 const CartScreen = () => {
@@ -15,6 +15,10 @@ const CartScreen = () => {
    
  const addToCartHandler = (item, qty) => {
      dispatch(addToCart({...item, qty}));
+ }
+
+ const removeFromCartHandler = (id) => {
+  dispatch(removeFromCart(id))
  }
 
   return (
@@ -61,7 +65,7 @@ const CartScreen = () => {
                                 ))}
                               </select>
                             </form>
-                            <button className="btn btn-error" onClick={() => dispatch(deleteCart(123))}>
+                            <button className="btn btn-error" onClick={() => removeFromCartHandler(item._id)}>
                             <MdDelete color="white" size="20px"/>
                             </button>
                           </div>
