@@ -1,5 +1,6 @@
 
 import products from "./data/products.js";
+import users from "./data/users.js";
 
 import User from "./model/userModel.js";
 import Product from "./model/productModel.js";
@@ -17,11 +18,20 @@ const importData = async () => {
         await Product.deleteMany();
         await User.deleteMany();
 
-        const sampleProduct = await Product.insertMany(products);
+        const createUsers = await User.insertMany(users);
+
+        const adminUser = createUsers[0]._id;
+
+        const sampleProducts = products.map((product) => {
+            return {...product, user:adminUser}
+        })
+
+        await Product.insertMany(sampleProducts);
 
         console.log("Date Imported");
 
         process.exit();
+        
 
     }catch(error){
         console.log(error);
