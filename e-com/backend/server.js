@@ -2,10 +2,11 @@ import express, { urlencoded } from "express";
 import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import cookieParser from "cookie-parser";
 
 import cors from "cors";
 
-import { notFound ,errorHandler} from "./middleware/errorMiddler.js";
+import { notFound ,errorHandler } from "./middleware/errorMiddler.js";
 
 const port = 5000;
 
@@ -16,7 +17,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); 
 app.use(express.urlencoded({extended:true}));
-
+app.use(cookieParser());
 
 app.get("/", (req, res) => {
     res.send("Hello");

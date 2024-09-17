@@ -7,8 +7,7 @@ const notFound = (req, res, next) => {
 }
 
 const errorHandler = (err, req, res, next) => {
-
-    console.log('Error handler middleware:', err); 
+ 
 
     let statusCode = res.statusCode === 200 ? 500 : res.statusCode;
     let message = err.message;
@@ -24,4 +23,4 @@ const errorHandler = (err, req, res, next) => {
 
 }
 
-export {notFound, errorHandler};
+export {notFound,errorHandler};
