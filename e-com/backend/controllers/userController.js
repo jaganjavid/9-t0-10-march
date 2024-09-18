@@ -1,7 +1,8 @@
 
 import asyncHandler from "../middleware/asyncHandler.js";
 import User from "../model/userModel.js";
-import jwt from "jsonwebtoken";
+import generateToken from "../utils/generateToken.js";
+
 
 
 // @desc Auth User
@@ -9,9 +10,6 @@ import jwt from "jsonwebtoken";
 // @access Public
 
 const authUser = asyncHandler(async(req, res) => {
-
-
-    // res.send("auth user");
    
     const {email, password} = req.body;
 
@@ -21,16 +19,7 @@ const authUser = asyncHandler(async(req, res) => {
     if(user && (await user.matchPassword(password))){
 
 
-       const token = jwt.sign({userId:user._id},"secret",{ expiresIn: "30d" });
-
-       // Set JWT AS HTTP ONLY
-
-       res.cookie("jwt", token, {
-           httpOnly:true,
-           secure:false,
-           sameSite:"strict",
-           maxAge:30 * 24 * 60 * 60 * 1000
-       })
+        generateToken(res, user._id);
 
 
         res.json({
@@ -53,7 +42,37 @@ const authUser = asyncHandler(async(req, res) => {
 // @access Public
 
 const registerUser = asyncHandler(async(req, res) => {
-    res.send("register send");
+
+    const { name, email , password } = req.body;
+
+    const userExists = await User.findOne({email});
+
+    if(userExists){
+        res.status(400);
+        throw new Error("User already exist");
+    }
+
+    const user = await User.create({
+        name,
+        email,
+        password
+    })
+
+    if(user){
+        console.log(user);
+        generateToken(res, user._id);
+
+        res.status(201).json({
+            _id:user._id,
+            name:user.name,
+            email:user.email,
+            isAdmin:user.isAdmin
+        })
+
+    }else {
+        res.status(400);
+        throw new Error("Invalid user data")
+    }
 })
 
 // @desc Logout User
@@ -61,7 +80,13 @@ const registerUser = asyncHandler(async(req, res) => {
 // @access Private
 
 const logoutUser = asyncHandler(async(req, res) => {
-    res.send("Logout user");
+    
+    res.cookie("jwt", "", {
+        httpOnly:true,
+        expires: new Date(0)
+    })
+
+    res.status(200).json({message:"Logged out successfully"});
 })
 
 
